@@ -11,10 +11,16 @@
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
     {{ 'application.js' | asset_url | script_tag }}
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <body>
     {% section 'header' %}
-    <h2 class="bg-emerald-700 text-white text-3xl text-center py-11">hello to the world</h2>
+    <div class="bg-emerald-800 flex justify-center items-center gap-2">
+      {% render 'icon-heart' %}
+      <h2 class="text-white text-3xl text-center py-11">hello to the world</h2>
+      {% render 'icon-heart' %}
+    </div>
+
     <main role="main">
       {{ content_for_layout }}
     </main>
